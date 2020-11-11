@@ -25,7 +25,7 @@ SECRET_KEY = 'w-&s93)0oppjt7&^x1)v*hjc5xdfz@a$-h2*dqb(d+wy=^!=3l'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -38,6 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'email_celery',
+
+    # third-party-app
+    'django_celery_beat',
 ]
 
 MIDDLEWARE = [
@@ -123,3 +126,20 @@ STATIC_URL = '/static/'
 CELERY_BROKER_URL = 'redis://h:p08587290a6cafa69fb9176e3a1c6dc8b184f2914320137554c882dc0642a019e@ec2-34-197-161-211.compute-1.amazonaws.com:20049'
 CELERY_ACCEPT_CONTENT = ['json']
 CELERY_TASK_SERIALIZER = 'json'
+
+
+# EMAIL_HOST = 'smtp.fastmail.com'
+# EMAIL_PORT = 
+# EMAIL_HOST_USER = ''
+# EMAIL_HOST_PASSWORD = '' 
+# EMAIL_USE_TLS = False
+# EMAIL_USE_SSL = True
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+# EMAIL_USE_SSL = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = "viewofsunset@gmail.com"
+EMAIL_HOST_PASSWORD = 'Perfectw()90'
